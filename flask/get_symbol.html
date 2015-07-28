@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title>Moving Average Calculator</title>
+</head>
+
+<body>
+<h1>Moving Average Calculator</h1>
+<form action='/calculate' method='POST'>
+Enter a ticker symbol: <input type="text" name="ticker" id="ticker"><br>
+<input type="submit" value="Submit">
+</form>
+
+<p></p>
+{% if ticker is not none %}
+Recent symbols: <br>
+{% for ticker in tickers %}
+{{ ticker[0] }} <br>
+{% endfor %}
+{% endif %}
+</body>
+
+</html>
